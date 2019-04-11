@@ -1,0 +1,34 @@
+{
+  "imserver": "http://localhost/IMServices3",
+  "REDIS_USER_KEY": {
+    "host": "127.0.0.1",
+    "port": 6379,
+    "db": 0
+  },
+  "REDIS_SESSION_KEY": {
+    "host": "127.0.0.1",
+    "port": 6379,
+    "db": 1
+  },
+  "REDIS_STATE_KEY": {
+    "host": "127.0.0.1",
+    "port": 6379,
+    "db": 1
+  },
+  "REDIS_MSGCACHE_KEY": {
+    "host": "127.0.0.1",
+    "port": 6379,
+    "db": 2
+  },
+  "REDIS_MSGPOST_KEY": {
+    "host": "127.0.0.1",
+    "port": 6379,
+    "db": 2
+  },
+  "REDIS_MSGMQ_KEY": {
+    "host": "127.0.0.1",
+    "port": 6379,
+    "db": 2
+  }
+
+}

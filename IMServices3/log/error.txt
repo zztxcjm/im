@@ -1,0 +1,16 @@
+﻿时间:2018-10-27 15:55:48 
+=====================================================================================
+内容: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sselect DISTINCT a.* from 
+	                        im_message as a
+	           ' at line 1  args= sselect DISTINCT a.* from 
+	                        im_message as a
+	                        left join im_message_receivers as b on a.MsgUid=b.MsgUid
+                        where 
+                            a.MsgType BETWEEN 1 AND 8
+	                        and a.SenderUserType=1
+                            and (a.SenderUserId=@SenderUserID or a.SenderUserId=@RecevierUserID)
+                            and (b.ReceiverUserId=@SenderUserID or b.ReceiverUserId=@RecevierUserID)
+                        order by a.SendTime desc
+                        limit 0,20 
+=====================================================================================
+错误：未能加载文件或程序集“Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35”或它的某一个依赖项。找到的程序集清单定义与程序集引用不匹配。 (异常来自 HRESULT:0x80131040)

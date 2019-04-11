@@ -1,0 +1,17 @@
+{
+  "name": "imservices3.web-socket-server",
+  "version": "1.0.0",
+  "description": "IMServices3.WebSocketServer",
+  "main": "server.js",
+  "author": {
+    "name": ""
+  },
+  "dependencies": {
+    "mongodb": "^3.1.8",
+    "mysql": "^2.16.0",
+    "nodejs-websocket": "^1.7.1",
+    "redis": "^2.8.0",
+    "request": "^2.88.0",
+    "sync-request": "^6.0.0"
+  }
+}

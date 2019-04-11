@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>visibilitychange测试</title>
+    <script src="../ClientSdk/zepto.min.js"></script>
+</head>
+<body>
+
+    <script type="text/javascript">
+        document.addEventListener("visibilitychange", function () {
+            if (document.visibilityState === "visible") {
+                $(document.body).append('<div>' + `${new Date()} visible`+'</div>');
+            }
+            if (document.visibilityState === "hidden") {
+                $(document.body).append('<div>' + `${new Date()} hidden` + '</div>');
+            }
+        });
+
+    </script>
+
+</body>
+</html>

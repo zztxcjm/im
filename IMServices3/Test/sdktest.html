@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>sdktest</title>
+    <script type="text/javascript" src="../ClientSdk/zepto.min.js"></script>
+    <script type="text/javascript" src="../clientsdk/txsdk.js"></script>
+</head>
+<body>
+
+    <script type="text/javascript">
+
+        $(function () {
+
+            zztx_tx.init({
+                im_apiServer: 'https://im2.handday.com',
+                im_pushMsgCallback: pushmsg_callback,
+                userid: 'cjm',
+                userpwd: '123456'
+            });
+
+            zztx_tx.login(function (result) {
+
+                if (result.error) {
+                    console.log(result.error);
+                } else {
+
+                    //拉取历史消息
+                    //zztx_tx.getLastestMessage('cjm', 30, function (result) {
+                    //    if (result.error) {
+                    //        console.log(result.error);
+                    //    } else {
+                    //        showHistoryMsg(result.value);
+                    //    }
+                    //});
+
+                    //设置其它UI状态
+
+                }
+
+            });
+
+        });
+
+        var pushmsg_callback = function (msg) {
+
+            if (msg.msgtype === zztx_tx.msgType.chat_text) {
+                console.log('文本消息');
+                console.log(msg);
+                //console.log(msg.body);
+            } else if (msg.msgtype === zztx_tx.msgType.chat_welcome) {
+                console.log('欢迎消息');
+                console.log(msg);
+            } else if (msg.msgtype === zztx_tx.msgType.chat_pictures) {
+                console.log('图片消息');
+                console.log(msg);
+            } else if (msg.msgtype === zztx_tx.msgType.system_push) {
+                console.log('系统推送消息');
+                console.log(msg.body);
+            }
+
+        };
+
+        var showHistoryMsg = function (msglist) {
+            console.log('显示历史聊天消息');
+            console.log(msglist);
+        };
+
+        var btclick_sendMsg = function () {
+
+            var text_msg = zztx_tx.buildTextMsg('要发送的文字', ['cjm']);
+            var pic_msg = zztx_tx.buildPictrueMsg({
+                orgUrl: 'http://g.hiphotos.baidu.com/image/pic/item/5243fbf2b211931376d158d568380cd790238dc1.jpg',
+                thubUrl: 'http://g.hiphotos.baidu.com/image/pic/item/5243fbf2b211931376d158d568380cd790238dc1.jpg'
+            }, ['cjm']);
+
+            zztx_tx.sendMsg(text_msg, function (result) {
+
+                if (result.error) {
+                    //failed
+                } else {                    
+                    //success
+                }
+
+            });
+
+            zztx_tx.sendMsg(pic_msg, function (result) {
+
+                if (result.error) {
+                    //failed
+                } else {
+                    //success
+                }
+
+            });
+
+
+
+        };
+
+    </script>
+
+</body>
+</html> 

@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{33856F75-5E42-4AF8-9265-7A81AF3AA4E2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FaceHand.Common.Core</RootNamespace>
+    <AssemblyName>FaceHand.Common.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ChineseConverter">
+      <HintPath>..\..\..\..\libs\SAASProjectRelease\ChineseConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="ChnCharInfo">
+      <HintPath>..\..\..\..\libs\SAASProjectRelease\ChnCharInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=1.50.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.4\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Gma.QrCodeNet.Encoding.Net45">
+      <HintPath>..\..\..\..\libs\SAASProjectRelease\二维码\Gma.QrCodeNet.Encoding.Net45.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=e44a2bc38ed2c13c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\libs\SAASProjectRelease\企业库\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\..\..\..\libs\SAASProjectRelease\企业库\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=4.1.0.0, Culture=neutral, PublicKeyToken=e44a2bc38ed2c13c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\libs\SAASProjectRelease\企业库\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\..\..\libs\SAASProjectRelease\企业库\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\libs\SAASProjectRelease\企业库\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\..\..\..\libs\SAASProjectRelease\企业库\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.11\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="StackExchange.Redis, Version=1.2.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.1.2.6\lib\net45\StackExchange.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cache\ICacheProvider.cs" />
+    <Compile Include="DNSCache\DnsCache.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="健康检查\HealthResult.cs" />
+    <Compile Include="健康检查\HealthState.cs" />
+    <Compile Include="公共\基类\NoMeber.cs" />
+    <Compile Include="公共\IOC\SingleInstanceFactory.cs" />
+    <Compile Include="公共\Redis\ResdisExecutor.cs" />
+    <Compile Include="公共\基类\DataContext.cs" />
+    <Compile Include="公共\基类\EntityBase2.cs" />
+    <Compile Include="公共\基类\EntityBase3.cs" />
+    <Compile Include="公共\实体\KeyAndValue.cs" />
+    <Compile Include="安全\IIS头过滤\WebServerFilter.cs" />
+    <Compile Include="安全\请求过滤\AgentFilter.cs" />
+    <Compile Include="安全\CC\CCAttack.cs" />
+    <Compile Include="安全\CC\Config.cs" />
+    <Compile Include="安全\CC\ContextData.cs" />
+    <Compile Include="安全\CC\HttpModule.cs" />
+    <Compile Include="安全\CC\IPBlackList.cs" />
+    <Compile Include="安全\CC\IPObservePools.cs" />
+    <Compile Include="工具\DictionaryExt.cs" />
+    <Compile Include="工具\ThreadHelp.cs" />
+    <Compile Include="异常\DataHandleException.cs" />
+    <Compile Include="日志\分析日志\Factory.cs" />
+    <Compile Include="全局监听器\GlobalListenerException.cs" />
+    <Compile Include="全局监听器\GlobalListenerManager.cs" />
+    <Compile Include="全局监听器\GlobalListenerType.cs" />
+    <Compile Include="全局监听器\IGlobalListener.cs" />
+    <Compile Include="公共\DBMaper\DBMaper.cs" />
+    <Compile Include="公共\DBReader\DataReaderReader.cs" />
+    <Compile Include="公共\DBReader\DataRowReader.cs" />
+    <Compile Include="公共\DBReader\DbFieldReaderFactory.cs" />
+    <Compile Include="公共\DBReader\IDbFieldReader.cs" />
+    <Compile Include="公共\IOC\DependencyInjectionHelper.cs" />
+    <Compile Include="公共\IOC\ObjectBuilder.cs" />
+    <Compile Include="公共\IOC\自定义配置\CustomConfigSelection.cs" />
+    <Compile Include="公共\IOC\自定义配置\DependencyInjectionConfigItem.cs" />
+    <Compile Include="公共\IOC\自定义配置\DependencyInjectionConfigItemCollection.cs" />
+    <Compile Include="公共\IOC\自定义配置\DependencyInjectionParamItem.cs" />
+    <Compile Include="公共\IOC\自定义配置\DependencyInjectionParamItemCollection.cs" />
+    <Compile Include="公共\IOC\自定义配置\DependencyInjectionProvider.cs" />
+    <Compile Include="公共\基类\BussinessBase.cs" />
+    <Compile Include="公共\基类\CommonBase.cs" />
+    <Compile Include="公共\基类\DataAccessBase.cs" />
+    <Compile Include="公共\基类\DataContext2.cs" />
+    <Compile Include="公共\基类\EntityBase.cs" />
+    <Compile Include="公共\基类\EntityBaseCanCoObject.cs" />
+    <Compile Include="公共\基类\EntityBaseWithCreateAndModifyInfo.cs" />
+    <Compile Include="公共\基类\EntityBaseWithCreateAndModifyInfoAndCanCoObject.cs" />
+    <Compile Include="公共\基类\IEntityCanCoObject.cs" />
+    <Compile Include="公共\基类\IEntityWithCreateAndModifyInfo.cs" />
+    <Compile Include="公共\实体\ClientType.cs" />
+    <Compile Include="公共\实体\CrmBizObjectType.cs" />
+    <Compile Include="公共\实体\KeywordMatchModel.cs" />
+    <Compile Include="公共\实体\QueryFilter.cs" />
+    <Compile Include="公共\实体\QueryFilterWithPager.cs" />
+    <Compile Include="公共\实体\QueryModel.cs" />
+    <Compile Include="公共\实体\SexType.cs" />
+    <Compile Include="公共\常量\GlobalConstDefined.cs" />
+    <Compile Include="日志\分析日志\实体\WxMsgLog.cs" />
+    <Compile Include="日志\分析日志\实体\WxSyncEntity.cs" />
+    <Compile Include="日志\分析日志\实现\AjaxLog.cs" />
+    <Compile Include="日志\分析日志\实现\WxMsgLogDAL.cs" />
+    <Compile Include="日志\分析日志\实现\WxMsgLogProvider.cs" />
+    <Compile Include="日志\分析日志\实现\WxSyncLogProvider.cs" />
+    <Compile Include="日志\分析日志\实现\AnalyzeLog.cs" />
+    <Compile Include="工具\ChinesePinYinHelper.cs" />
+    <Compile Include="工具\ContentType.cs" />
+    <Compile Include="工具\DateTimeExt.cs" />
+    <Compile Include="工具\Developer.cs" />
+    <Compile Include="工具\EnumExt.cs" />
+    <Compile Include="工具\Ext.cs" />
+    <Compile Include="工具\FaceExt.cs" />
+    <Compile Include="工具\FileExt.cs" />
+    <Compile Include="工具\HttpRequestClientHelper.cs" />
+    <Compile Include="工具\NetworkHelper.cs" />
+    <Compile Include="工具\PathCodeHelper.cs" />
+    <Compile Include="工具\QRCodeExt.cs" />
+    <Compile Include="工具\RegExt.cs" />
+    <Compile Include="工具\SampleBatchSql.cs" />
+    <Compile Include="工具\SerializeHelper.cs" />
+    <Compile Include="工具\StringExt.cs" />
+    <Compile Include="日志\分析日志\实现\WxLogDAL.cs" />
+    <Compile Include="日志\微信日志\WxLog.cs" />
+    <Compile Include="日志\微信日志\WxLogProvider.cs" />
+    <Compile Include="日志\文本日志\SystemLoger.cs" />
+    <Compile Include="工具\WinFileShareHelper.cs" />
+    <Compile Include="异常\BusinessException.cs" />
+    <Compile Include="异常\CustomException.cs" />
+    <Compile Include="异常\ProgramException.cs" />
+    <Compile Include="异常\ProviderConfigException.cs" />
+    <Compile Include="日志\分析日志\实体\LogEntity.cs" />
+    <Compile Include="日志\分析日志\实体\LogType.cs" />
+    <Compile Include="日志\分析日志\实现\DAL.cs" />
+    <Compile Include="日志\分析日志\实现\LogManageDefaultProvider.cs" />
+    <Compile Include="日志\分析日志\实现\WebLogContext.cs" />
+    <Compile Include="日志\分析日志\接口\ILogManage.cs" />
+    <Compile Include="日志\分析日志\实体\LogQueryFilter.cs" />
+    <Compile Include="日志\分析日志\接口\ILogContext.cs" />
+    <Compile Include="测试探针\Probe2.cs" />
+    <Compile Include="测试探针\Probe.cs" />
+    <Compile Include="资源\StringResource.cs" />
+    <Compile Include="配置\全局数据库配置\CustomDbConfig.cs" />
+    <Compile Include="配置\全局数据库配置\CustomMySqlDatabase.cs" />
+    <Compile Include="配置\全局数据库配置\CustomMySqlFactory.cs" />
+    <Compile Include="配置\全局数据库配置\Setting.cs" />
+    <Compile Include="配置\基于数据库的配置\ConstDefined.cs" />
+    <Compile Include="配置\基于数据库的配置\Factory.cs" />
+    <Compile Include="配置\基于数据库的配置\实现\ConfigDataReadException.cs" />
+    <Compile Include="配置\基于数据库的配置\实现\ConfigKeyBuilder.cs" />
+    <Compile Include="配置\基于数据库的配置\实现\DatabaseConfigProvider2.cs" />
+    <Compile Include="配置\基于数据库的配置\实现\DatabaseConfigProvider.cs" />
+    <Compile Include="配置\基于数据库的配置\实现\DataServices.cs" />
+    <Compile Include="配置\基于数据库的配置\实现\TextMemoryDAL.cs" />
+    <Compile Include="配置\基于数据库的配置\实现\TextMemoryProvider.cs" />
+    <Compile Include="配置\基于数据库的配置\工具\FileConfigHelper.cs" />
+    <Compile Include="配置\基于数据库的配置\接口\IConfigManage.cs" />
+    <Compile Include="配置\基于数据库的配置\接口\ITextMemoryManage.cs" />
+    <Compile Include="配置\应用程序配置\Default.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
